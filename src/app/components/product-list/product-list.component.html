@@ -1,0 +1,22 @@
+<h2>Inventory</h2>
+<button (click)="goAdd()">Add Product</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products(); trackBy: trackById">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>
+        <button (click)="goEdit(product.id)">Edit</button>
+        <button (click)="delete(product.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
